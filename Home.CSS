@@ -1,0 +1,17 @@
+* {
+    text-align: center;
+
+}
+
+.background {
+    position: center;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(143, 69, 69); 
+}
+
+.text {
+    text-align: left;
+}
