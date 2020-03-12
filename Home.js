@@ -2,6 +2,10 @@
 
 function listFood(){
     
+    var user1 = document.getElementById("user1").value;
+
+    document.getElementById("user1Choose").innerHTML = user1 + " ,Enter 3 Choices";
+
     var foods = [
         "TacoBell",
         "Del Taco",
@@ -26,7 +30,7 @@ $(document).ready(function() {
     $(".foodChoices").hide();
 
     $("#userSubmit").click(function(){
-        $(".users").slideUp();
+        $(".users").hide();
         $(".foodChoices").show();
 
     })
