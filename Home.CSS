@@ -3,15 +3,42 @@
 
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', Georgia, Times, serif;
+    
+}
+
+
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
 .background {
     position: center;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
+    background-color: snow;
 
 }
 
 .text {
     text-align: left;
+}
+
+h1 { 
+    text-shadow: 1px 1px 1px #ccc;
+}
+.background { 
+    box-shadow: 1em 1em 1em 1em #ccc;
+    align-content: center;
+}
+
+button { 
+    color: whitesmoke;   
+    background-color: rgb(85, 143, 143);
+    border:1px solid; 
+    border-color: #696 #363 #363 #696; 
+    border-radius: 12px;
+    
 }
