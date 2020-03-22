@@ -31,6 +31,7 @@ function mixFood() {
 
 function displayFood() {
     if (foods.length == 1){
+        document.getElementById("removeFood").innerHTML = "";
         winner();
     }
     var linebreak = document.createElement("br");
@@ -72,8 +73,10 @@ function displayFood() {
 function subtractFood() {
     var count = 0;
     var tempVal;
+    var isChecked = false;
     for (i = 0; i < foods.length; i++) {
         if (document.getElementById("checkFoods"+i).checked == true) {
+            isChecked = true;
             count++;
             if (count > 1) {
                 alert("Please select only one restaurant.");
@@ -82,24 +85,29 @@ function subtractFood() {
             else {
                 tempVal = i;   
             }
-        }
+        }     
     }
+    if (isChecked == false){       
+            alert("Please select a restaurant.");
+                return false;      
+    }
+    
     foods.splice(tempVal, 1);
     displayFood();
 }
 
 
 function winner(){
-    document.write("the winner is!!")
+    var winner = "The winner is" +foods[0];
+    var winnerLabel = document.createElement("h2")
+    winnerLabel.innerHTML = winner
+
+    document.getElementById("removeFood").appendChild(winnerLabel);
 }
-
-
-
 
 $(document).ready(function() {
     $(".foodChoices").hide();
-    $(".removeFood").hide();
-    $(".remove").hide();
+    $("#remove").hide();
 
     $("#userSubmit").click(function(){
         $(".users").hide();
@@ -110,7 +118,7 @@ $(document).ready(function() {
 
     $("#next").click(function(){
         $(".foodChoices").hide();
-        $(".removeFood").show();
+        $("#remove").show();
 
         
         
@@ -118,4 +126,3 @@ $(document).ready(function() {
 
     })
 });
-
